@@ -38,10 +38,13 @@ Examples:
 
 1. Install prerequisites
 ```sh
-# Debian based distribution:
-apt install git curl jq
-# Arch based distribution:
-pacman -S git curl jq
+# Ubuntu/Debian
+sudo apt install git curl jq
+# CentOS/RHEL
+sudo yum install epel-release -y # needed to install JQ package
+sudo yum -y install git curl jq
+# Fedora
+sudo dnf -y install git curl jq
 ```
 2. Clone and navigate to this repository:
 ```sh
