@@ -34,3 +34,39 @@ Examples:
                             NOT RECOMMENDED!
                             
 ```
+## Usage
+
+1. Install prerequisites
+```sh
+# Debian based distribution:
+apt install git curl jq
+# Arch based distribution:
+pacman -S git curl jq
+```
+2. Clone and navigate to this repository:
+```sh
+git clone https://github.com/Sidicer/vault-snapshot.sh.git
+cd vault-snapshot.sh
+```
+3. Add your Vault token (with /storage/ READ permissions):
+```sh
+echo "hcv.your-token" > config/vault_token
+```
+4. Make `vault-snapshot.sh` executable:
+```sh
+chmod +x bin/vault-snapshot.sh
+```
+5. Configure `_VAULT_URL`:
+```sh
+vim config/vault-snapshot.cfg
+# Change _VAULT_URL= to match your cluster setup
+# :wq
+```
+6. Test `vault-snapshot.sh`:
+```sh
+bin/vault-snapshot.sh -v
+```
+7. Automate snapshot creation (weekly):
+```sh
+crontab -l | { cat; echo "0 5 * * 7 /path/to/vault-snapshot.sh/bin/vault-snapshot.sh"; } | crontab -
+```
