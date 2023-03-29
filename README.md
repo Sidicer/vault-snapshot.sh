@@ -55,21 +55,17 @@ cd vault-snapshot.sh
 ```sh
 echo "hcv.your-token" > config/vault_token
 ```
-4. Make `vault-snapshot.sh` executable:
-```sh
-chmod +x bin/vault-snapshot.sh
-```
-5. Configure `_VAULT_URL`:
+4. Configure `_VAULT_URL`:
 ```sh
 vim config/vault-snapshot.cfg
 # Change _VAULT_URL= to match your cluster setup
 # :wq
 ```
-6. Test `vault-snapshot.sh`:
+5. Test `vault-snapshot.sh`:
 ```sh
 bin/vault-snapshot.sh -v
 ```
-7. Automate snapshot creation (weekly):
+6. Automate snapshot creation (weekly):
 ```sh
 crontab -l | { cat; echo "0 5 * * 7 /path/to/vault-snapshot.sh/bin/vault-snapshot.sh"; } | crontab -
 ```
