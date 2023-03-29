@@ -34,6 +34,12 @@ Examples:
                             NOT RECOMMENDED!
                             
 ```
+
+
+<p align="center" width="100%">
+<img src="https://img.shields.io/github/license/Sidicer/vault-snapshot.sh?style=flat-square"> <img src="https://img.shields.io/github/v/tag/Sidicer/vault-snapshot.sh?label=version&style=flat-square">
+</p>
+
 ## Usage
 
 1. Install prerequisites
